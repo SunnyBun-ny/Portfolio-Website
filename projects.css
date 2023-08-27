@@ -1,0 +1,139 @@
+
+.projects{
+    box-sizing: border-box;
+    width: 1920px;
+    margin: auto;
+    padding: 120px 240px;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+@media screen and (max-width: 1920px){
+    .projects{
+        width: 100%;
+    }
+}
+.projects .headerBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.projects .header {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 28px;
+}
+
+.projects .title{
+    color: #222E50;
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 60px; /* 75% */
+    letter-spacing: 1.6px;
+}
+
+.projects .hDivider{
+    display: flex;
+
+    margin-right: 60px;
+    height: 2px;
+    justify-content: center;
+    align-self: stretch;
+    background-color: #848484;
+}
+
+
+
+
+.projectTypes{
+    display: inline-flex;
+    flex-direction: row;
+    gap: 80px
+
+}
+
+.navBarItems{
+    color: #000;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.48px;
+}
+
+.displayProjects{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    row-gap: 100px;
+    column-gap: 100px;
+
+}
+
+.project{
+    display: inline-flex;
+    flex-direction: row;
+    width: 500px;
+    height: 400px;
+    border-radius: 30px;
+    box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.30);
+    background: linear-gradient(151deg, #1E1E1E 0%, rgba(30, 30, 30, 0.71) 100%);
+    overflow: hidden;
+    transition: width 300ms ease-in;
+}
+
+.banner{
+    width: 500px;
+    height: 400px;
+    background-image: url('assets/ttmm_project_cover.jpeg');
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+
+}
+.project:hover {
+    width: 1100px;
+}
+
+.project:hover .info{
+    display: inline-flex;
+    width: 100%;
+}
+.project .info{
+    
+    width: max-content;
+    display: none;
+    flex-direction: column;
+    gap:40px;
+    box-sizing: border-box;
+    padding: 40px 60px;
+}
+
+.info .title{
+    color: #E6E6E6;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 60px; /* 187.5% */
+    letter-spacing: 0.64px;
+}
+
+.info .description{
+    background-color: red;
+    display: block;
+    color: #B6AEAE;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px; /* 125% */
+    letter-spacing: 0.48px;
+    
+    text-overflow: ellipsis;
+}

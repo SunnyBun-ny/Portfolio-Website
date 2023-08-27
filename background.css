@@ -1,0 +1,12 @@
+:root{
+    font-family: 'Cascadia Code', sans-serif;
+    background-color: #101010;                                            
+}
+body{
+    margin: 0px;
+}
+html{
+    
+    background: linear-gradient(130deg, #FFF 0%, rgba(255, 255, 255, 0.69) 100%);
+    background-repeat: no-repeat;
+}
