@@ -36,7 +36,9 @@
                         <div class="hDivider" id="cM"></div>
                     </li>
                 </ul>
-                <div class="resume-btn">Download Resume</div>
+                <a class="custom-btn"
+                    href="https://drive.google.com/file/d/1IxCsQSEeHNTYTgsYlICnZJz9P4JZXSMk/view?usp=drive_link"
+                    target="_blank">Download Resume</a>
             </div>
         </div>
     </header>
@@ -48,7 +50,9 @@
                         <div class="hi">Hi,</div>
                         <div class="title-row">
                             <span class="name-is">I am</span>
-                            <span class="home-title" id="sm-name">Sanket More</span>
+                            <span class="home-title" id="sm-name">
+                                Sanket More
+                            </span>
                         </div>
                     </div>
                     <div class="home-content-bottom-section" id="home-bottom">
@@ -60,16 +64,23 @@
                         Recent Projects
                     </div>
                     <div class="recent-projects-display">
-                        <div class="recent-project-banner">
-                        </div>
-                        <div class="see-more-btn" id="btn">
+                        <a class="project-card project-card-small"
+                            href="https://www.behance.net/gallery/168516273/TTMM-UIUX-Case-Study" target="_blank">
+                            <img src="assets/ttmm_project_cover.jpeg" alt="">
+                            <div class="project-card-content">
+                                <h2 class="project-card-title">
+                                    UI/UX Case Study - TTMM
+                                </h2>
+                            </div>
+                        </a>
+                        <a class="see-more-btn" id="see-more-btn" href="#section-my-projects">
                             <span>See More</span>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 31" fill="none">
                                 <path
                                     d="M2.85547 13.3012C1.7509 13.3012 0.855469 14.1966 0.855469 15.3012C0.855469 16.4058 1.7509 17.3012 2.85547 17.3012V13.3012ZM26.5588 16.7154C27.3399 15.9344 27.3399 14.668 26.5588 13.887L13.8309 1.15907C13.0499 0.378024 11.7835 0.378024 11.0025 1.15907C10.2214 1.94012 10.2214 3.20645 11.0025 3.9875L22.3162 15.3012L11.0025 26.6149C10.2214 27.396 10.2214 28.6623 11.0025 29.4433C11.7835 30.2244 13.0499 30.2244 13.8309 29.4433L26.5588 16.7154ZM2.85547 17.3012H25.1446V13.3012H2.85547V17.3012Z"
                                     fill="#222E50" />
                             </svg>
-                        </div>
+                        </a>
                     </div>
                 </div>
 
@@ -189,7 +200,7 @@
                                 </div>
                             </div>
 
-                            <div class="skills-category" >
+                            <div class="skills-category">
                                 <span class="skills-category-title">Others</span>
                                 <div class="skills" id="skills-others">
                                     <!-- <div class="skill-card">
@@ -214,17 +225,17 @@
         </div>
         <script>
             function skillsList(el, skills) {
-            for (skill of skills) {
+                for (skill of skills) {
 
-                var imagePath = 'assets/logo_' + skill.toLowerCase().replaceAll(' ', '_') + '.png';
-                el.innerHTML += `<div class="skill-card">
+                    var imagePath = 'assets/logo_' + skill.toLowerCase().replaceAll(' ', '_') + '.png';
+                    el.innerHTML += `<div class="skill-card">
                                         <img src="${imagePath}" class="logo" onerror="this.src='assets/logo_default_skill.png'; this.onerror=null;"  ></img>
                                         <span class="skill">${skill}</span>
                                     </div>`
 
 
+                }
             }
-        }
             const skillsUiUx = [
                 'Figma', 'User Research', 'Wireframing', 'Prototyping', 'User Centered Designs'
             ];
@@ -255,7 +266,7 @@
                     <div class="header-baseline header-baseline-left"></div>
                 </div>
                 <ul class="nav-items-list">
-                    <li class="nav-item nav-item-small" , id="nav-item-all">
+                    <li class="nav-item nav-item-small" ,id="nav-item-all">
                         <a href="#">All</a>
                         <div class="hDivider hDivider-small"></div>
                     </li>
@@ -282,6 +293,15 @@
                             expense tracking, promoting fairness and simplicity in financial interactions, ultimately
                             enhancing friendships.
                         </p>
+                        <a class="see-more-btn see-more-btn-small" id="see-more-btn"
+                            href="https://www.behance.net/gallery/168516273/TTMM-UIUX-Case-Study" target="_blank">
+                            <span>View Project</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 31" fill="none">
+                                <path
+                                    d="M2.85547 13.3012C1.7509 13.3012 0.855469 14.1966 0.855469 15.3012C0.855469 16.4058 1.7509 17.3012 2.85547 17.3012V13.3012ZM26.5588 16.7154C27.3399 15.9344 27.3399 14.668 26.5588 13.887L13.8309 1.15907C13.0499 0.378024 11.7835 0.378024 11.0025 1.15907C10.2214 1.94012 10.2214 3.20645 11.0025 3.9875L22.3162 15.3012L11.0025 26.6149C10.2214 27.396 10.2214 28.6623 11.0025 29.4433C11.7835 30.2244 13.0499 30.2244 13.8309 29.4433L26.5588 16.7154ZM2.85547 17.3012H25.1446V13.3012H2.85547V17.3012Z"
+                                    fill="#ffffff" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
 
@@ -302,7 +322,8 @@
                         <textarea name="message" class="text-field" id="contact-me-message" cols="10"
                             placeholder="Message" required></textarea>
                     </div>
-                    <input type="submit" value="Send" class="send-btn" id="cotact-me-send-btn"></button>
+                    <input type="submit" value="Send" class="custom-btn custom-btn-small"
+                        id="cotact-me-send-btn"></button>
                 </form>
                 <div class="right-section">
                     <div class="top">
@@ -438,78 +459,69 @@
             });
 
 
-        
 
 
 
-        function typeWriter(el) {
-            const textArray = el.innerHTML.split('');
-            el.innerHTML = '';
-            textArray.forEach(
-                (letter, i) =>
-                    setTimeout(
-                        () => (
-                            el.innerHTML += letter
-                        )
-                        , 95 * i
-                    )
-            );
-            setInterval(() => (
-                typeWriter(el)), 10000);
-        }
-
-        var typeWriterElement = document.getElementById('home-bottom');
 
 
-        var textArray = ["Flutter Developer", "Web Developer", "UI/UX Designer"];
         // function to generate the backspace effect 
-        function delWriter(text, i, cb) {
+        function delWriter(element, text, i, cb, typingTime, deleteTime, startDeleteTimer, restartTime) {
             if (i >= 0) {
-                typeWriterElement.innerHTML = text.substring(0, i--);
+                element.innerHTML = text.substring(0, i--);
                 // generate a random Number to emulate backspace hitting.
 
                 setTimeout(function () {
-                    delWriter(text, i, cb);
-                }, 20);
+                    delWriter(element, text, i, cb, typingTime, deleteTime, startDeleteTimer, restartTime);
+                }, deleteTime);
             } else if (typeof cb == 'function') {
-                setTimeout(cb, 1000);
+                setTimeout(cb, restartTime);
             }
         };
 
         // function to generate the keyhitting effect
-        function typeWriter(text, i, cb) {
+        function typeWriter(element, text, i, cb, typingTime, deleteTime, startDeleteTimer, restartTime) {
             if (i < text.length + 1) {
-                typeWriterElement.innerHTML = text.substring(0, i++);
+                element.innerHTML = text.substring(0, i++);
                 setTimeout(function () {
-                    typeWriter(text, i++, cb)
-                }, 80);
+                    typeWriter(element, text, i++, cb, typingTime, deleteTime, startDeleteTimer, restartTime)
+                }, typingTime);
             } else if (i === text.length + 1) {
                 setTimeout(function () {
-                    delWriter(text, i, cb)
-                }, 2000);
+                    delWriter(element, text, i, cb, typingTime, deleteTime, startDeleteTimer, restartTime)
+                }, startDeleteTimer);
             }
         };
 
         // the main writer function
-        function StartWriter(i) {
+        function StartWriter(element, textArray, i, typingTime, deleteTime, startDeleteTimer, restartTime) {
             if (typeof textArray[i] == "undefined") {
                 setTimeout(function () {
-                    StartWriter(0)
-                }, 1000);
+                    StartWriter(element, textArray, 0, typingTime, deleteTime, startDeleteTimer, restartTime);
+                }, typingTime);
             } else if (i < textArray[i].length + 1) {
-                typeWriter(textArray[i], 0, function () {
-                    StartWriter(i + 1);
-                });
+                typeWriter(element, textArray[i], 0, function () {
+                    StartWriter(element, textArray, i + 1, typingTime, deleteTime, startDeleteTimer, restartTime);
+                }, typingTime, deleteTime, startDeleteTimer, restartTime);
             }
         };
+        var subtitleDoc = document.getElementById('home-bottom');
+        var subtitleArray = ["Flutter Developer", "Web Developer", "UI/UX Designer"];
+
+        var headingDoc = document.getElementById('sm-name');
+        var headingAray = ["Sanket More"];
         // wait one second then start the typewriter
         setTimeout(function () {
-            StartWriter(0);
+            StartWriter(subtitleDoc, subtitleArray, 0, 80, 10, 2000, 1000);
+            StartWriter(headingDoc, headingAray,0, 80, 0, 10000, 0 );
         }, 1000);
 
 
-        let a = document.getElementById('sm-name');
-        typeWriter(a);
+
+
+
+
+
+
 
     </script>
 </body>

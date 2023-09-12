@@ -1,5 +1,6 @@
 :root {
     --primary-color: #222E50;
+    --heading-color:#E6E6E6;
     --dark-background-gradient: linear-gradient(63deg, rgba(30, 30, 30, 0.90) 0%, #1E1E1E 100%),
         linear-gradient(135deg, #1E1E1E 0%, rgba(30, 30, 30, 0.95) 100%);
     font-family: 'Cascadia Code', sans-serif;
@@ -56,9 +57,56 @@ html {
         font-size: 2px;
     }
 }
+/* Custom Button */
+.custom-btn {
+    appearance: none;
+    background: #222E50;
+    border:none;
+    border-radius: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    min-width: 0;
+    outline: none;
+    padding: 0.75rem 3rem;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: auto;
+    will-change: transform;
+    font-family: 'Cascadia Code';
+    color: #FFF;
+    font-size: 1.25rem;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: normal;
+    letter-spacing: 0.4px;
+}
 
+.custom-btn:disabled {
+    pointer-events: none;
+}
+
+.custom-btn:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+}
+
+.custom-btn:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+.custom-btn-small{
+    padding: 0.75rem 2.5rem;
+    border-radius: 10;
+}
 /* Nav nar CSS */
 .nav-bar-wrapper {
+    z-index: 1;
     position: absolute;
     display: flex;
     width: 100%;
@@ -81,22 +129,6 @@ html {
     width: 5rem;
     height: 2.125rem;
 
-}
-
-.navbar .resume-btn {
-    display: inline;
-    white-space: nowrap;
-    padding: 12px 30px;
-    border-radius: 10px;
-    background: #222E50;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-
-    color: #FFF;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 0.4px;
 }
 
 .nav-items-list {
@@ -214,7 +246,7 @@ html {
 }
 
 .header-title {
-    color: #E6E6E6;
+    color: var(--heading-color);
     font-size: 4.375rem;
     font-style: normal;
     font-weight: 400;
@@ -292,7 +324,7 @@ html {
     background-size: auto;
     background-repeat: no-repeat;
 
-    z-index: -1;
+    z-index: 0;
 }
 
 #foreground-img {
@@ -303,8 +335,6 @@ html {
     right: 8.3%;
     height: 50.312rem;
     width: 44.125rem;
-    z-index: 0.5;
-
 }
 
 .home-wrapper .home-content {
@@ -321,7 +351,7 @@ html {
 }
 
 .home-content-top-section {
-    z-index: 1;
+    
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -438,37 +468,29 @@ html {
     align-items: center;
 }
 
-.container-recent-projects .recent-project-banner {
-    height: 10rem;
-    width: 12.5rem;
-    border-radius: 10px;
-    box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.30);
-    background-image: url('assets/ttmm_project_cover.jpeg');
-    background-size: cover;
-}
-
 .see-more-btn {
+    text-decoration: none;
     display: inline-flex;
     gap: 12px;
-    height: 52px;
-    width: 52px;
+    height: 3.25rem;
+    width: 3.25rem;
     border-radius: 100px;
-
-    /* height: 3.124rem; */
     justify-content: center;
     align-items: center;
     color: #222E50;
     border: 4px var(--primary-color) solid;
-
+    transition: width 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .see-more-btn span {
+    white-space:nowrap;
     display: none;
     font-size: 20px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
     letter-spacing: 0.32px;
+    transition: display 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .see-more-btn svg {
@@ -477,11 +499,35 @@ html {
     rotate: 90deg;
 }
 
-#btn:hover .see-more-btn span {
-    display: block;
-
+.see-more-btn-small{
+    border: 2px var(--heading-color) solid;
+    height: 2rem;
+    width: 2rem;
+}
+.see-more-btn-small span {
+    color: var(--heading-color);
+    font-size: 1rem;
+}
+.see-more-btn-small svg{
+    color: var(--heading-color);
+    height: 1rem;
+    width: 1rem;
+    rotate: 360deg
 }
 
+#see-more-btn:hover {
+    width:11.25rem;
+    transition: width 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.see-more-btn:hover span {
+    display: flex;
+    transition: width 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+#see-more-btn-small:hover {
+    
+    transition: width 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
 @media screen and (max-width: 1920px) {
     .home-wrapper {
         width: 100%;
@@ -630,7 +676,7 @@ html {
 .about-me .bottom-section .title {
     margin: auto;
     display: flex;
-    color: #E6E6E6;
+    color: var(--heading-color);
     font-size: 3.125rem;
     font-style: normal;
     font-weight: 400;
@@ -650,7 +696,7 @@ html {
 }
 
 .about-me .skills-section .skills-category {
-    
+
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -697,7 +743,7 @@ html {
     align-items: center;
     gap: 1rem;
     border-radius: 20px;
-    background: #E6E6E6;
+    background: var(--heading-color);
 
     color: #000;
     font-size: 1.5rem;
@@ -774,6 +820,7 @@ html {
 .my-projects-list {
     display: flex;
     flex-direction: row;
+    min-height: 24rem;
     gap: 5rem;
     flex-wrap: wrap;
     justify-content: center;
@@ -828,25 +875,24 @@ html {
     margin: 0;
 
     text-transform: uppercase;
-    color: #E6E6E6;
+    color: var(--heading-color);
     font-size: 1.5rem;
     font-weight: 400;
 }
 
 .project-card .project-card-description,
-.card a {
+.project-card a {
     /* position: absolute; */
     opacity: 0;
-    max-width: 80%;
+    max-width: 90%;
     transition: opacity 0.3s ease-out;
 }
 
 .project-card .project-card-description {
     color: #d7d7d7;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 300;
     inset: auto auto 60px 30px;
-    font-size: 1.1rem
 }
 
 .project-card:hover .project-card-content {
@@ -870,7 +916,16 @@ html {
     color: inherit;
     text-decoration: none;
 }
+.project-card-small{
+    width: 12.5rem;
+    height: 10rem;
 
+    border-radius: 24px;
+}
+.project-card-small .project-card-title {
+    font-size: 1.3rem;
+    
+}
 @media screen and (max-width: 1920px) {
     .my-projects-wrapper {
         width: 100%;
@@ -1011,73 +1066,6 @@ input:-webkit-autofill:active {
     gap: 1rem;
     align-self: stretch;
 }
-
-/* <button class="send-btn" role="button">Button 29</button> */
-
-/* CSS */
-.send-btn {
-    align-items: center;
-    appearance: none;
-    background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
-    border: 0;
-    border-radius: 6px;
-    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgba(58, 65, 111, .5) 0 -3px 0 inset;
-    box-sizing: border-box;
-    color: #fff;
-    cursor: pointer;
-    display: inline-flex;
-    font-family: "JetBrains Mono", monospace;
-    height: 48px;
-    justify-content: center;
-    line-height: 1;
-    list-style: none;
-    overflow: hidden;
-    padding-left: 16px;
-    padding-right: 16px;
-    position: relative;
-    text-align: left;
-    text-decoration: none;
-    transition: box-shadow .15s, transform .15s;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    white-space: nowrap;
-    will-change: box-shadow, transform;
-    font-size: 18px;
-}
-
-.send-btn:focus {
-    box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
-}
-
-.send-btn:hover {
-    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
-    transform: translateY(-2px);
-}
-
-.send-btn:active {
-    box-shadow: #3c4fe0 0 3px 7px inset;
-    transform: translateY(2px);
-}
-
-.contact-me .send-btn {
-
-    padding: 0.75rem 2.5rem;
-    justify-content: center;
-    align-items: center;
-
-    border-radius: 10px;
-    background: #222E50;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-
-    color: #FFF;
-    font-size: 1.25rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 0.4px;
-}
-
 #contact-me-email {
     align-self: stretch;
     height: 4rem;
