@@ -1,3 +1,39 @@
+const projects = [
+    {
+        type: 'Web',
+        title: 'Portfolio Website',
+        description: `The website you are surfing right now represents my commitment to continuous learning and growth. As you navigate through the website, you'll witness my evolving skills in web development, from coding to design. It showcases my proficiency in HTML, CSS, JavaScript, and highlights my adaptability in crafting user-friendly experiences.`,
+        link: `#`,
+        image: 'assets/portfolio_project_cover.png',
+        target: '_self',
+    },
+    {
+        type: 'UI/UX',
+        title: 'UI/UX Case Study - TTMM',
+        description: `TTMM, or "Tera Tu, Mera Me" (You pay yours, I pay mine), revolutionizes expense splitting
+                        among friends in three straightforward steps. This case study showcases how TTMM eases
+                        expense tracking, promoting fairness and simplicity in financial interactions, ultimately
+                        enhancing friendships.`,
+        link: `https://www.behance.net/gallery/168516273/TTMM-UIUX-Case-Study`,
+        image: 'assets/ttmm_project_cover.jpeg',
+    },
+
+]
+function getRecentProjectCard() {
+    let project = projects[0];
+    return `<a class="project-card project-card-small"
+    href="${project.link}" target="${'target' in project ? project.target : '_blank'}">
+    <img src="${project.image}" alt="">
+    <div class="project-card-content">
+        <h2 class="project-card-title">
+            ${project.title}
+        </h2>
+    </div>
+</a>`;
+}
+
+document.getElementById('recent-projects-container').insertAdjacentHTML("afterBegin", getRecentProjectCard());
+
 /*-----------------------------------------------------------------------------------------*/
 //FUNCTIONS FOR 'ABOUT ME' SECTION
 //returns skill card for the list of skills
@@ -36,19 +72,6 @@ skillsList(document.getElementById('skills-others'), skillsOthers);
 
 /*-----------------------------------------------------------------------------------------*/
 //FUNCTIONS FOR 'MY PROJECTS' SECTION
-//function for my projects Tabbar
-const projects = [
-    {
-        type: 'Personal',
-        title: 'UI/UX Case Study - TTMM',
-        description: `TTMM, or "Tera Tu, Mera Me" (You pay yours, I pay mine), revolutionizes expense splitting
-                        among friends in three straightforward steps. This case study showcases how TTMM eases
-                        expense tracking, promoting fairness and simplicity in financial interactions, ultimately
-                        enhancing friendships.`,
-        link: `https://www.behance.net/gallery/168516273/TTMM-UIUX-Case-Study`,
-        image: 'assets/ttmm_project_cover.jpeg',
-    }
-]
 //returns project-card html for the given map
 function getProjectCard(value) {
     return `<div class="project-card">
@@ -61,7 +84,7 @@ function getProjectCard(value) {
                                         ${value.description}
                                     </p>
                                     <a class="see-more-btn see-more-btn-small" id="see-more-btn"
-                                        href="${value.link}" target="_blank">
+                                        href="${value.link}" target="${'target' in value ? value.target : '_blank'}">
                                         <span>View Project</span>
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 31" fill="none">
                                             <path
@@ -157,7 +180,7 @@ document.getElementById('contact-me-form')
                     showStatus.style.color = getComputedStyle(root).getPropertyValue('--success-color');
                     this.reset();
                     StartWriter(document.getElementById('submit-status-text'), ['Your message has been sent.'], 0, 50, 10, 19999999, 1000);
-                    
+
                 }, (err) => {
                     showStatus.innerHTML =
                         ` <svg xmlns="http://www.w3.org/2000/svg" id="icon-error" fill="currentColor" class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
