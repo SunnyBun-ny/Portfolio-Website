@@ -238,7 +238,7 @@ function StartWriter(element, textArray, i, typingTime, deleteTime, startDeleteT
     }
 };
 var subtitleDoc = document.getElementById('home-bottom');
-var subtitleArray = ["Flutter Developer", "Web Developer", "UI/UX Designer"];
+var subtitleArray = ["Mobile Developer", "Web Developer", "UI/UX Designer", "Freelancer"];
 var headingDoc = document.getElementById('sm-name');
 var headingAray = ["Sanket More"];
 // wait one second then start the typewriter
