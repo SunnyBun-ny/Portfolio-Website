@@ -1,5 +1,13 @@
 const projects = [
     {
+        type: 'UI/UX',
+        title: 'Gym Website UI',
+        description: `Presenting you the fitness gym website UI that's all about pushing boundaries!
+        In this challenge, I immersed myself in a world of bold, eye-catching colors to test my creative limits. The result? A design that not only energizes but also captivates.`,
+        link: `https://www.behance.net/gallery/180926961/FITNESS-GYM-WEBSITE-DESIGN`,
+        image: 'assets/project_website_design.png',
+    },
+    {
         type: 'Web',
         title: 'Portfolio Website',
         description: `The website you are surfing right now represents my commitment to continuous learning and growth. As you navigate through the website, you'll witness my evolving skills in web development, from coding to design. It showcases my proficiency in HTML, CSS, JavaScript, and highlights my adaptability in crafting user-friendly experiences.`,
